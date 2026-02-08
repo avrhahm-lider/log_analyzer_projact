@@ -38,4 +38,7 @@ def dict_suspicious_ip(data: list[list[str]]):
             arr.append("ACTIVITY_NIGHT")
         dict1[ip] = arr
     return dict1
-print(dict_suspicious_ip(checks.extract_cvs_file(checks.path)))
+
+def map_num_of_sus(data:dict):
+    return {key: val for key,val in data.items() if len(val) > 1 }
+
