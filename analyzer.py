@@ -42,3 +42,6 @@ def dict_suspicious_ip(data: list[list[str]]):
 def map_num_of_sus(data:dict):
     return {key: val for key,val in data.items() if len(val) > 1 }
 
+def hourly_rescue(timestamp:list[str]):
+    return list(map(lambda x: x[-8],timestamp))
+
