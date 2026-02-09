@@ -45,3 +45,9 @@ def map_num_of_sus(data:dict):
 def hourly_rescue(timestamp:list[str]):
     return list(map(lambda x: x[-8],timestamp))
 
+def conversion_kilobits(byte_list:list[str]):
+    return list(map(lambda x : x/ 1024,byte_list))
+
+def external_sensitive_port(data :list[list[str]]):
+    sensitive_ports = {"22", "3389", "23"}
+    return list(filter(lambda x : x[-3] in sensitive_ports,data))

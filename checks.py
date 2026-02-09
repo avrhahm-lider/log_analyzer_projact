@@ -11,7 +11,7 @@ path = "C:\\Users\\1234\Downloads\log_analyzer_project-main\\network_traffic.log
 
 def external_ip_extraction(data: list[list[str]]):
     return [socket[1] for socket in data if socket[1].split(".")[0] != "10" and socket[1].split(".")[0]+socket[1].split(".")[1] != "192168" ]
-
+print(extract_cvs_file(path))
 def external_sensitive_ports(data: list[list[str]]):
     sensitive_ports = {"22","3389","23"}
     return [socket for socket in data if socket[-3] in sensitive_ports]
