@@ -29,13 +29,13 @@ def dict_suspicious_ip(data: list[list[str]]):
     for ip in return_ip_set(data):
         arr = []
         if ip in a:
-            arr.append("IP_EXTERNAL")
+            arr.append("EXTERNAL_IP")
         if ip in b:
-            arr.append("PORT_SENSITIVE")
+            arr.append("SENSITIVE_PORT")
         if ip in c:
-            arr.append("PACKET_LARGE ")
+            arr.append("LARGE_PACKET ")
         if ip in d:
-            arr.append("ACTIVITY_NIGHT")
+            arr.append("NIGHT_ACTIVITY")
         dict1[ip] = arr
     return dict1
 
