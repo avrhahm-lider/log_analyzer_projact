@@ -9,5 +9,3 @@ def extract_cvs_file(file_path):
 
     except FileNotFoundError as e:
         print(f"Error {e}")
-
-print((extract_cvs_file("network_traffic.log")))

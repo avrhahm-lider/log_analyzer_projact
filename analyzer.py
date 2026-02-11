@@ -63,11 +63,7 @@ suspicion_checks = {
 "EXTERNAL_IP": lambda x : x[1].split(".",1)[0] != "10" or x[1].split(".",2)[0]+x[1].split(".",1)[1] == "192168",
 "SENSITIVE_PORT": lambda x : x[-3] in sensitive_ports,
 "LARGE_PACKET": lambda x: int(x[-1]) > 5000,
-"NIGHT_ACTIVITY": lambda x : 0 < check_first_num(x[0][-8:-6]) < 6 }
+"NIGHT_ACTIVITY": lambda x : 0 <= check_first_num(x[0][-8:-6]) < 6 }
 def checking_suspicions_row(row:list[str], sen_dict:dict = suspicion_checks):
     return [key for key , val in  sen_dict.items() if val(row)]
 
-def above_two_suspicions(data :list[list[str]]):
-    return list(filter(lambda x : len(x) >= 2,map(checking_suspicions_row,data)))
-print(len(checks.extract_cvs_file(checks.path)))
-print(len(above_two_suspicions(checks.extract_cvs_file(checks.path))))
