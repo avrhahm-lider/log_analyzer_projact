@@ -1,13 +1,4 @@
-import csv
-from pathlib import Path
-def extract_cvs_file(file_path):
-    try:
-        with open(file_path, "r") as f:
-            r = csv.reader(f)
-            return [row for row in r]
-    except FileNotFoundError as e:
-        print(f"Error {e}")
-path = "C:\\Users\\1234\Downloads\log_analyzer_project-main\\network_traffic.log"
+from reader import extract_cvs_file
 
 def external_ip_extraction(data: list[list[str]]):
     return [socket[1] for socket in data if socket[1].split(".")[0] != "10" and socket[1].split(".")[0]+socket[1].split(".")[1] != "192168" ]

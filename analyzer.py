@@ -37,7 +37,7 @@ def dict_suspicious_ip(data: list[list[str]]):
         if ip in d:
             arr.append("NIGHT_ACTIVITY")
         dict1[ip] = arr
-    return dict1
+        yield dict1
 
 def map_num_of_sus(data:dict):
     return {key: val for key,val in data.items() if len(val) > 1 }
